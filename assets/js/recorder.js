@@ -159,9 +159,6 @@
         (event) => {
             if(isRecordingRunning){
                 stopCapture();
-
-                // Track Screen Recording with Fathom 
-                    window.fathom.trackGoal('9VXPTH8L', 0);
             }else{
                 startCapture();
             }
@@ -322,9 +319,6 @@
                         'ended', 
                         (event) => {
                             stopCapture(event);
-                            
-                            // Track Screen Recording with Fathom 
-                                window.fathom.trackGoal('9VXPTH8L', 0);
                         }
                     );
                 }
@@ -333,9 +327,6 @@
                     'inactive', 
                     (event) => {
                         stopCapture(event);
-                        
-                        // Track Screen Recording with Fathom 
-                            window.fathom.trackGoal('9VXPTH8L', 0);
                     }
                 );
 
@@ -611,8 +602,6 @@
         // and Display the Download Link and Chunks Section.
             webmDowElem.href          = oFullObjectURL;
             webmDowElem.style.display = "inline-block";
-            // Track WebM Download with Fathom 
-                webmDowElem.setAttribute("onclick", "window.fathom.trackGoal('NZ32QPJA', 0);");
 
             gifDowElem.style.display  = "inline-block";
             chunksHElem.style.display = "inline-block";
@@ -662,8 +651,6 @@
                         videoChunkAElem.innerHTML = '<i class="fa fa-arrow-circle-down" aria-hidden="true"></i> Download WebM';
                         videoChunkAElem.classList.add("button");
                         videoChunkAElem.href = videoChunkBlob;
-                        // Track WebM Download with Fathom 
-                            videoChunkAElem.setAttribute("onclick", "window.fathom.trackGoal('NZ32QPJA', 0);")
 
                         videoChunkAElem.download = "screenrecording-chunk-" + iChunkCount + ".webm";
                         videoChunkDivElem.appendChild(videoChunkAElem);
